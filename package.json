@@ -1,0 +1,7 @@
+{
+  "name": "ascii-art-webcomponents",
+  "version": "0.0.1",
+  "dependencies": {
+    "hybrids": "^5.1.0"
+  }
+}
