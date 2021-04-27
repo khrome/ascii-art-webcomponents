@@ -1,15 +1,14 @@
-//import { html, define, children } from 'hybrids';
-var html = require('hybrids').html;
-var define = require('hybrids').define;
-var parent = require('hybrids').parent;
-var children = require('hybrids').children;
-var property = require('hybrids').property;
+//var hybrids = require('hybrids');
+var hybrids = window.hybrids;
+var Art = window.AsciiArt;
+var html = hybrids.html;
+var define = hybrids.define;
+var parent = hybrids.parent;
+var children = hybrids.children;
+var property = hybrids.property;
 
-function imageLoad(host, event){
 
-}
-
-export const AsciiArtHeader = {
+const AsciiArtHeader = {
   font: property(''),
   text: property(''),
   renderedText: ({ text }) => {
@@ -17,7 +16,7 @@ export const AsciiArtHeader = {
   },
   render: ({ renderedText }) => html`
       <style>
-          span.ascii-art-header{
+          div.ascii-art-header{
 
           }
       </style>
@@ -27,21 +26,56 @@ export const AsciiArtHeader = {
 
 define('ascii-art-header', AsciiArtHeader);
 
-export const AsciiArtImage = {
-  font: property(''),
-  src: property(''),
-  imageTxt: property(''),
-  htmlTxt: ({ imageTxt }) => {
-      return imageTxt;
-  },
-  render: ({ renderedText, src }) => html`
-      <style>
-          span.ascii-art-image{
+function imageLoad(host, event){
+    console.log('LOADED', host, event)
+    var img = event.target;
+    Art.image({
+        imageBody : img,
+        alphabet: 'variant1',
+        height : 32,
+        width : 32,
+        imageInfo : {
+            height : img.naturalHeight,
+            width : img.naturalWidth,
+        }
+    }, function(err, rendered){
+        if(err) throw err;
+        console.log('STARTED');
+        setTimeout(function(){
+            var html = window.ansi2html?window.ansi2html(rendered):rendered;
+            console.log('RENDERED', host, html);
+            host.renderedSrc = html;
+        }, 100)
+    });
+}
 
-          }
-      </style>
-      <img class="ascii-art-image" onload="${imageLoad}" src="${src}"/>
-  `,
+const AsciiArtImage = {
+    font: property(''),
+    src: property(''),
+    renderedSrc: property(''),
+    imageTxt: property(''),
+    htmlTxt: ({ imageTxt }) => {
+        return imageTxt;
+    },
+    render: ({ src, renderedSrc }) => html`
+        <style>
+            img.ascii-art-image{
+                ${(renderedSrc?'display:none; ':'')}
+                font-family: "Courier New", Courier, monospace;
+            }
+        </style>
+        ${(
+            renderedSrc &&
+            html`
+                <div
+                    class="ascii-art-image"
+                    style="font-family: Courier, monospace"
+                    innerHTML="${renderedSrc}"
+                ></div>
+            `
+        )}
+        <img class="ascii-art-image" onload="${imageLoad}" src="${src}"/>
+    `,
 };
 
 define('ascii-art-image', AsciiArtImage);

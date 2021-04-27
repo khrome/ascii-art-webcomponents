@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- things that need UMDification -->
+        <script src="./dist/bundled.js"></script>
+        <script>
+            /*window.ansi2html = function(str){
+                var t1 = (new Date()).getTime();
+                var count = 0;
+                console.log(str);
+                return window.AsciiArtAnsi.map(str, function(chr, codes, rowcol, pos, shortcircuit){
+                    console.log('B', (new Date()).getTime() - t1, codes);
+                    count++;
+                    if(count > 5000) shortcircuit();
+                    var Color = window.AsciiArtAnsiColor;
+                    var foregroundList = codes.filter(function(code){
+                        return window.AsciiArtAnsi.is.it.foregroundcolor(code);
+                    });
+                    var backgroundList = codes.filter(function(code){
+                        return window.AsciiArtAnsi.is.it.backgroundcolor(code);
+                    });
+                    var foreground = foregroundList[foregroundList.length-1];
+                    var background = backgroundList[foregroundList.length-1];
+                    var style = '';
+                    console.log('?', foreground, Color.value(foreground), background, Color.value(background), '|'+chr+'|')
+                    if(foreground) style += ' color: '+Color.value(foreground)+';';
+                    if(background) style +=' background-color: '+Color.value(background)+';';
+                    return '<span style="'+style+'">'+chr+'</span>';
+                }, true);
+            };*/
+        </script>
+        <!-- __dirname -->
+        <script src="https://cdn.jsdelivr.net/npm/dirname-shim@1.0.0/shim.js"></script>
+        <!-- ANSI -->
+        <!--<script src="https://cdn.jsdelivr.net/npm/ascii-art-ansi@1.3.6/color.js"></script>-->
+        <script src="https://cdn.jsdelivr.net/npm/ascii-art-ansi@1.3.6/color.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/ascii-art-ansi@1.3.6/ansi.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/ascii-art-ansi@1.3.6/grid.js"></script>
+        <!-- ANSI -->
+        <script src="https://cdn.jsdelivr.net/npm/ascii-art-braille@0.1.0/braille.js"></script>
+        <!-- UTF -->
+        <script src="https://cdn.jsdelivr.net/npm/ascii-art-utf@0.0.1/utf.js"></script>
+        <!-- FONT -->
+        <script src="https://cdn.jsdelivr.net/npm/ascii-art-font@1.0.2/font.js"></script>
+        <!-- IMAGE -->
+        <script src="https://cdn.jsdelivr.net/npm/ascii-art-image@1.3.4/renderers/average.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/ascii-art-image@1.3.4/image.js"></script>
+        <!-- TABLE -->
+        <script src="https://cdn.jsdelivr.net/npm/ascii-art-table@1.0.1/table.js"></script>
+        <!-- GRAPH -->
+        <script src="https://cdn.jsdelivr.net/npm/ascii-art-graph@0.1.2/graph.js"></script>
+        <!-- hybrids.js -->
+        <script src="https://cdn.jsdelivr.net/npm/hybrids@4.3.0/dist/hybrids.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/ascii-art@2.6.0/art.js"></script>
+        <script src="./components.js"></script>
+    </head>
+    <body>
+        <ascii-art-image src="adder.jpg"><ascii-art-image>
+    </body>
+</html>
