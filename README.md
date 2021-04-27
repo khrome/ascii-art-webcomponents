@@ -20,7 +20,7 @@ That's cool, we've got you covered, too. Just drop this on your page:
 
 ```html
 <!-- things that need UMDification (load order matters, so no async)-->
-<script src="https://cdn.jsdelivr.net/npm/ascii-art-webcomponents@0.0.1/dist/bundled.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/ascii-art-webcomponents@0.0.2/dist/bundled.js"></script>
 <!-- __dirname -->
 <script src="https://cdn.jsdelivr.net/npm/dirname-shim@1.0.0/shim.js"></script>
 <!-- ANSI -->
@@ -43,7 +43,7 @@ That's cool, we've got you covered, too. Just drop this on your page:
 <!-- hybrids.js -->
 <script src="https://cdn.jsdelivr.net/npm/hybrids@4.3.0/dist/hybrids.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/ascii-art@2.6.0/art.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/ascii-art-webcomponents@0.0.1/components.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/ascii-art-webcomponents@0.0.2/components.js"></script>
 ```
 
 Though I really recommend bundling for production (Hey, not trying to tell you what to do!).

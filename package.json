@@ -1,6 +1,6 @@
 {
   "name": "ascii-art-webcomponents",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "dependencies": {
     "hybrids": "^5.1.0",
     "json2csv": "^5.0.6",

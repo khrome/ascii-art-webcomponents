@@ -2287,13 +2287,14 @@ exports.clearImmediate = typeof clearImmediate === "function" ? clearImmediate :
 
 
 module.exports = function(str){
-    var result = ansi.map(str, function(chr, codes, rowcol, pos, shortcircuit){
+    var Color = window.AsciiArtAnsiColor;
+    var result = window.AsciiArtAnsi.map(str, function(chr, codes, rowcol, pos, shortcircuit){
         if(chr === "\n") return '<br>';
         var foregroundList = codes.filter(function(code){
-            return ansi.is.it.foregroundcolor(code);
+            return window.AsciiArtAnsi.is.it.foregroundcolor(code);
         });
         var backgroundList = codes.filter(function(code){
-            return ansi.is.it.backgroundcolor(code);
+            return window.AsciiArtAnsi.is.it.backgroundcolor(code);
         });
         var foreground = foregroundList[foregroundList.length-1];
         var background = backgroundList[foregroundList.length-1];
