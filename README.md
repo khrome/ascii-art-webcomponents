@@ -43,6 +43,7 @@ That's cool, we've got you covered, too. Just drop this on your page:
 <!-- hybrids.js -->
 <script src="https://cdn.jsdelivr.net/npm/hybrids@4.3.0/dist/hybrids.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/ascii-art@2.6.0/art.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/ascii-art-webcomponents@0.0.1/components.js"></script>
 ```
 
 Though I really recommend bundling for production (Hey, not trying to tell you what to do!).
