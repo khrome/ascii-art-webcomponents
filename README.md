@@ -1,4 +1,4 @@
-ascii-art-webcomponents [pre-release]
+ascii-art-webcomponents [experimental]
 =======================
 
 Use ascii art in your browser
@@ -24,9 +24,9 @@ That's cool, we've got you covered, too. Just drop this on your page:
 <!-- __dirname -->
 <script src="https://cdn.jsdelivr.net/npm/dirname-shim@1.0.0/shim.js"></script>
 <!-- ANSI -->
-<script src="https://cdn.jsdelivr.net/npm/ascii-art-ansi@1.3.5/color.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/ascii-art-ansi@1.3.5/ansi.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/ascii-art-ansi@1.3.5/grid.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/ascii-art-ansi@1.3.7/color.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/ascii-art-ansi@1.3.7/ansi.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/ascii-art-ansi@1.3.7/grid.js"></script>
 <!-- ANSI -->
 <script src="https://cdn.jsdelivr.net/npm/ascii-art-braille@0.1.0/braille.js"></script>
 <!-- UTF -->
@@ -34,8 +34,8 @@ That's cool, we've got you covered, too. Just drop this on your page:
 <!-- FONT -->
 <script src="https://cdn.jsdelivr.net/npm/ascii-art-font@1.0.2/font.js"></script>
 <!-- IMAGE -->
-<script src="https://cdn.jsdelivr.net/npm/ascii-art-image@1.3.4/renderers/average.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/ascii-art-image@1.3.4/image.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/ascii-art-image@1.3.5/renderers/average.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/ascii-art-image@1.3.5/image.js"></script>
 <!-- TABLE -->
 <script src="https://cdn.jsdelivr.net/npm/ascii-art-table@1.0.1/table.js"></script>
 <!-- GRAPH -->
