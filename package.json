@@ -2,10 +2,20 @@
   "name": "ascii-art-webcomponents",
   "version": "0.0.1",
   "dependencies": {
-    "ansi2html": "0.0.1",
     "hybrids": "^5.1.0",
     "json2csv": "^5.0.6",
     "maplex": "0.0.2",
+    "ascii-art": "^2.7.0",
     "strangler": "^1.1.2"
+  },
+  "devDependencies": {
+    "http-server": "^0.12.3"
+  },
+  "scripts" :{
+      "test-server" : "node_modules/http-server/bin/http-server",
+      "static-bundle" : "browserify bundler.js -o ./dist/bundled.js",
+      "show-local" : "open http://localhost:8080/test-local.html",
+      "show-cdn" : "open http://localhost:8080/test-cdn.html",
+      "test" : "npm run static-bundle; npm run show-local; npm run test-server"
   }
 }

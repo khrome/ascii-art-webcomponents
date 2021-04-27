@@ -24,16 +24,45 @@
         <!-- GRAPH -->
         <script src="node_modules/ascii-art/node_modules/ascii-art-graph/graph.js"></script>
         <!-- hybrids.js -->
-        <script src="https://cdn.jsdelivr.net/npm/hybrids@4.3.0/dist/hybrids.js"></script>
+        <!--<script src="https://cdn.jsdelivr.net/npm/hybrids@4.3.0/dist/hybrids.js"></script>-->
+        <script type="module">
+          import * as hybridsjs from 'https://unpkg.com/hybrids@^5';
+          window.hybrids = hybridsjs;
+        </script>
         <script src="node_modules/ascii-art/art.js"></script>
-        <script src="./components.js"></script>
+        <!--<script defer src="./components.js"></script>-->
         <script>
             //window.AsciiArtAnsiColor.is256 = true;
+            window.AsciiArtAnsiColor.isTrueColor = true;
+            window.onload = function(){
+                var newScript = document.createElement("script");
+                newScript.src = "./components.js";
+                document.body.appendChild(newScript);
+            }
         </script>
     </head>
     <body>
-        <ascii-art-image src="adder.jpg"><ascii-art-image>
-        <ascii-art-image src="cernettes.jpg"><ascii-art-image>
-        <ascii-art-image src="tony_harrison.jpg"><ascii-art-image>
+        <ascii-art-header text="something"></ascii-art-header>
+        <ascii-art-image
+            src="adder.jpg"
+            rows="80" cols="80"
+            stipple="#000000"
+            posterize
+            threshold="80"
+        ></ascii-art-image>
+        <ascii-art-image
+            src="cernettes.jpg"
+            rows="80" cols="80"
+            stipple="#000000"
+            posterize
+            threshold="40"
+        ></ascii-art-image>
+        <ascii-art-image
+            src="tony_harrison.jpg"
+            rows="80" cols="60"
+            stipple="#000000"
+            posterize
+            threshold="35"
+        ></ascii-art-image>
     </body>
 </html>
