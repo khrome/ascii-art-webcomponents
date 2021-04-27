@@ -9,14 +9,14 @@ var property = hybrids.property;
 
 
 const AsciiArtHeader = {
-  font: property(''),
+  font: property('u:doublestrike'),
   text: property(''),
   renderedText: ({ text }) => {
       return text;
   },
-  render: ({ renderedText }) => {
+  render: ({ renderedText, font }) => {
       var promise = new Promise((resolve, reject) => {
-          AsciiArt.font(renderedText, 'u:doublestrike', function(err, rendered){
+          AsciiArt.font(renderedText, font, function(err, rendered){
               if(err) return reject(err);
               resolve(rendered);
           });
